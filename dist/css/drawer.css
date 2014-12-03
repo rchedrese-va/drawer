@@ -97,12 +97,7 @@
   display: block; }
 
 .drawer-default .drawer-nav-list li a {
-  display: block;
-  /*  padding: 15px;
-    color: #888;*/ }
-
-.drawer-default .drawer-nav-list li ul a {
-  padding: 8px 20px; }
+  display: block; }
 
 @media screen and (min-width: 767px) {
   .drawer-hamberger {
