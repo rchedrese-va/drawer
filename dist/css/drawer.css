@@ -62,7 +62,7 @@
   z-index: 1100;
   display: none;
   height: 100%;
-  background-color: #394C68;
+  background-color: #363E46;
   background-color: rgba(0, 0, 0, 0.5); }
 
 .drawer-left.drawer-open .drawer-overlay-upper {
@@ -72,7 +72,7 @@
   left: 0; }
 
 .drawer-default {
-  background-color: #394C68;
+  background-color: #363E46;
   -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.5); }
 
@@ -175,7 +175,7 @@
     right: 0; } }
 @media (min-width: 768px) {
   .drawer-responsive {
-    background-color: #394C68; }
+    background-color: #363E46; }
 
   .drawer-responsive.drawer-left .drawer-main,
   .drawer-responsive.drawer-right .drawer-main {
