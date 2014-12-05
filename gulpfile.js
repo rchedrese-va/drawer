@@ -13,13 +13,13 @@ gulp.task('watch', function() {
   browserSync({
     notify: false,
     server: {
-      baseDir: "./src/"
+      baseDir: "./"
     }
   });
 
   gulp.watch(['src/sass/*.scss'], ['styles', reload]);
-  gulp.watch(['src/*.html'], reload);
-  gulp.watch(['src/js/*.js'], reload);
+  gulp.watch(['./*.html'], reload);
+  gulp.watch(['src/js/*.js'], ['styles', reload]);
 });
 
 gulp.task('copy', ['styles', 'js'], function() {

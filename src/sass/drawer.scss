@@ -22,7 +22,9 @@ $drawer-hamberger-bg-color:#ddd;
   width: $drawer-width-phone;
   height: 100%;
   overflow: hidden;
-  margin-top: 100px;
+}
+.drawer-content {
+  height: 100%;
 }
 .drawer-left .drawer-main {
   left: -$drawer-width-phone;
@@ -94,21 +96,52 @@ $drawer-hamberger-bg-color:#ddd;
   color: #444;
   text-decoration: none;
 }
+.drawer-brand {
+  background-color: #637CA1;
+  text-align: center;
+}
 .drawer-default .drawer-nav-title {
   display: block;
   padding: 15px 15px 0 15px;
   font-size: 18px;
 }
-.drawer-default .drawer-nav-list {
-  padding: 0;
-  margin: 0 0 20px 0;
+.drawer-nav {
+  background-color: $drawer-nav-bg-color;
+}
+.drawer-nav-list {
   list-style: none;
+  padding: 0;
+
+  .selected {
+    background-color: #3F4853;
+  }
+
+  a {
+    color: #FFFFFF;
+    text-decoration: initial;
+    line-height: 48px;
+    font-size: 16px;
+    padding-left: 20px;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
 }
-.drawer-default .drawer-nav-list li {
+.drawer-subnav-list {
   display: block;
-}
-.drawer-default .drawer-nav-list li a {
-  display: block;
+  background-color: #3F4853;
+  list-style: none;
+  padding: 0;
+  li a {
+    display: block;
+    padding: 0 0 0 40px;
+  }
+  li a.selected {
+    background-color: #4D5760;
+    font-weight: normal;
+  }
 }
 
 @media screen and (min-width: 767px) {

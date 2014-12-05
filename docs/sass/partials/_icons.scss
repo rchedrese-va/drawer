@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Singularity Icons';
+  src:url('/static/fonts/icomoon.eot');
+  src:url('/static/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('/static/fonts/icomoon.woff') format('woff'),
+    url('/static/fonts/icomoon.ttf') format('truetype'),
+    url('/static/fonts/icomoon.svg#Singularity Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin common-font-icon-base($char-code) {
+    font-family: 'Singularity Icons';
+    speak: none;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    content: $char-code;
+    display: inline-block;
+}
+
+@mixin common-font-icon($char-code) {
+  display: inline-block;
+  &:before {
+    vertical-align: middle;
+    margin-right: 20px;
+    @include common-font-icon-base($char-code);
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.activity {
+  @include common-font-icon('\e601');
+}
+
+.listings {
+  @include common-font-icon('\e609');
+}
+
+.customers {
+  @include common-font-icon('\e603');
+}
+
+.website {
+  @include common-font-icon('\e604');
+}
+
+.statistics {
+  @include common-font-icon('\e607');
+}
+
+.schedule {
+  @include common-font-icon('\e602');
+}
+
+.settings {
+  @include common-font-icon('\e606');
+}

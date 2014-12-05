@@ -10,8 +10,10 @@
   top: 0;
   width: 220px;
   height: 100%;
-  overflow: hidden;
-  margin-top: 100px; }
+  overflow: hidden; }
+
+.drawer-content {
+  height: 100%; }
 
 .drawer-left .drawer-main {
   left: -220px;
@@ -83,21 +85,43 @@
   color: #444;
   text-decoration: none; }
 
+.drawer-brand {
+  background-color: #637CA1;
+  text-align: center; }
+
 .drawer-default .drawer-nav-title {
   display: block;
   padding: 15px 15px 0 15px;
   font-size: 18px; }
 
-.drawer-default .drawer-nav-list {
-  padding: 0;
-  margin: 0 0 20px 0;
-  list-style: none; }
+.drawer-nav {
+  background-color: #363E46; }
 
-.drawer-default .drawer-nav-list li {
-  display: block; }
+.drawer-nav-list {
+  list-style: none;
+  padding: 0; }
+  .drawer-nav-list .selected {
+    background-color: #3F4853; }
+  .drawer-nav-list a {
+    color: #FFFFFF;
+    text-decoration: initial;
+    line-height: 48px;
+    font-size: 16px;
+    padding-left: 20px; }
+    .drawer-nav-list a:hover {
+      color: #fff; }
 
-.drawer-default .drawer-nav-list li a {
-  display: block; }
+.drawer-subnav-list {
+  display: block;
+  background-color: #3F4853;
+  list-style: none;
+  padding: 0; }
+  .drawer-subnav-list li a {
+    display: block;
+    padding: 0 0 0 40px; }
+  .drawer-subnav-list li a.selected {
+    background-color: #4D5760;
+    font-weight: normal; }
 
 @media screen and (min-width: 767px) {
   .drawer-hamberger {
