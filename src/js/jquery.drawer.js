@@ -15,6 +15,7 @@
         mastaClass: "drawer-main",
         overlayClass: "drawer-overlay",
         toggleClass: "drawer-toggle",
+        subnavToggleClass: "drawer-submenu-toggle",
         upperClass: "drawer-overlay-upper",
         openClass: "drawer-open",
         closeClass: "drawer-close",
@@ -42,6 +43,15 @@
           methods.toggle.call(_this);
           drawerScroll.refresh();
         });
+        $("." + options.subnavToggleClass).click(function() {
+          if ($(this).hasClass('drawer-open')) {
+            $(this).removeClass('drawer-open');
+          } else {
+            $(".drawer-submenu-toggle").removeClass('drawer-open');
+            $(this).addClass('drawer-open');
+          }
+          return false;
+        })
         $(window).resize(function() {
           methods.close.call(_this);
           drawerScroll.refresh();

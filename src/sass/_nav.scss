@@ -33,6 +33,28 @@
   .selected {
     background-color: #3F4853;
   }
+  li {
+    overflow: hidden;
+  }
+  .drawer-submenu-toggle {
+    display: block;
+    float: right;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    text-align: center;
+    transition: all 0.15s $drawer-ease;
+
+    &.drawer-open {
+      transform: rotate(90deg);
+    }
+    &.drawer-open ~ .drawer-subnav-list {
+      max-height: 300px;
+    }
+    @media (min-width: 767px) and (max-width: 1199px) {
+      display: none;
+    }
+  }
 
   a {
     color: #FFFFFF;
@@ -45,7 +67,7 @@
       color: #fff;
     }
   }
-  @media (min-width: 767px) {
+  @media (min-width: 767px) and (max-width: 1199px) {
     padding: 0;
     text-align: center;
     span {
@@ -53,6 +75,7 @@
     }
     li {
       position: relative;
+      overflow: visible;
     }
     li:hover,
     li:focus {
@@ -71,14 +94,16 @@
   }
 }
 .drawer-subnav-list {
+  max-height: 0;
   display: block;
   background-color: #3F4853;
   list-style: none;
   padding: 0;
   text-align: left;
-  transition: none;
+  transition: max-height 0.3s $drawer-ease;
   li a {
     display: block;
+    background-color: #3F4853;
     padding: 0 0 0 40px;
   }
   li a.selected {
@@ -86,8 +111,9 @@
     font-weight: normal;
   }
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 767px) and (max-width: 1199px) {
     position: absolute;
+    max-height: auto;
     top: 0;
     left: 60px;
     width: 200px;
@@ -98,18 +124,6 @@
     z-index: 1;
     a {
       padding: 0 20px !important;
-    }
-  }
-  @media screen and (min-width: 1200px) {
-    width: 100%;
-    position: static;
-    display: block;
-    transition: none;
-    opacity: 1;
-    visibility: visible;
-    text-align: left;
-    a {
-      padding: 0;
     }
   }
 }

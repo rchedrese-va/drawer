@@ -139,6 +139,23 @@
   margin: 0; }
   .drawer-nav-list .selected {
     background-color: #3F4853; }
+  .drawer-nav-list li {
+    overflow: hidden; }
+  .drawer-nav-list .drawer-submenu-toggle {
+    display: block;
+    float: right;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    text-align: center;
+    transition: all 0.15s cubic-bezier(0.19, 1, 0.22, 1); }
+    .drawer-nav-list .drawer-submenu-toggle.drawer-open {
+      transform: rotate(90deg); }
+    .drawer-nav-list .drawer-submenu-toggle.drawer-open ~ .drawer-subnav-list {
+      max-height: 300px; }
+    @media (min-width: 767px) and (max-width: 1199px) {
+      .drawer-nav-list .drawer-submenu-toggle {
+        display: none; } }
   .drawer-nav-list a {
     color: #FFFFFF;
     text-decoration: initial;
@@ -147,14 +164,15 @@
     padding-left: 20px; }
     .drawer-nav-list a:hover {
       color: #fff; }
-  @media (min-width: 767px) {
+  @media (min-width: 767px) and (max-width: 1199px) {
     .drawer-nav-list {
       padding: 0;
       text-align: center; }
       .drawer-nav-list span {
         display: none; }
       .drawer-nav-list li {
-        position: relative; }
+        position: relative;
+        overflow: visible; }
       .drawer-nav-list li:hover .drawer-subnav-list,
       .drawer-nav-list li:focus .drawer-subnav-list {
         opacity: 1;
@@ -167,21 +185,24 @@
         display: inline; } }
 
 .drawer-subnav-list {
+  max-height: 0;
   display: block;
   background-color: #3F4853;
   list-style: none;
   padding: 0;
   text-align: left;
-  transition: none; }
+  transition: max-height 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
   .drawer-subnav-list li a {
     display: block;
+    background-color: #3F4853;
     padding: 0 0 0 40px; }
   .drawer-subnav-list li a.selected {
     background-color: #4D5760;
     font-weight: normal; }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 767px) and (max-width: 1199px) {
     .drawer-subnav-list {
       position: absolute;
+      max-height: auto;
       top: 0;
       left: 60px;
       width: 200px;
@@ -192,17 +213,6 @@
       z-index: 1; }
       .drawer-subnav-list a {
         padding: 0 20px !important; } }
-  @media screen and (min-width: 1200px) {
-    .drawer-subnav-list {
-      width: 100%;
-      position: static;
-      display: block;
-      transition: none;
-      opacity: 1;
-      visibility: visible;
-      text-align: left; }
-      .drawer-subnav-list a {
-        padding: 0; } }
 
 /*# sourceMappingURL=drawer.css.map */
 
