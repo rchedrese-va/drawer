@@ -1,0 +1,75 @@
+/* main */
+.drawer {
+  @media screen and (min-with: 767px) {
+    .drawer-toggle {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    background-color: $drawer-nav-bg-color;
+  }
+}
+.drawer-main {
+  position: fixed;
+  top: 0;
+  width: $drawer-width-phone;
+  height: 100%;
+  overflow: hidden;
+  left: -$drawer-width-phone;
+  transition: left $drawer-duration $drawer-ease;
+
+  .drawer-open & {
+    left: 0;
+  }
+
+  @media screen and (min-with: 767px) {
+    left: 0;
+  }
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    width: $drawer-width-tablet !important;
+    height: auto !important;
+    overflow: visible !important;
+    float: left;
+    left: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    width: $drawer-width-desktop !important;
+  }
+}
+.drawer-content {
+  height: 100%;
+}
+
+
+/* overlay */
+.drawer-overlay {
+  position: relative;
+  left: 0;
+  transition: left $drawer-duration $drawer-ease;
+  .drawer-open & {
+    left: $drawer-width-phone;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: $drawer-width-tablet;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: $drawer-width-desktop;
+  }
+}
+
+/* upper */
+.drawer-overlay-upper {
+  position: fixed;
+  z-index: $drawer-upper-zIndex;
+  top: 0;
+  height: 100%;
+  display: none;
+  background-color: $drawer-nav-bg-color;
+  background-color: rgba(0, 0, 0, .5);
+  .drawer-left.drawer-open & {
+    right: 0;
+  }
+}

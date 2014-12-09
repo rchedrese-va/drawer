@@ -1,0 +1,60 @@
+.drawer-hamberger { 
+  position:fixed;  
+  padding:20px;
+  width:70px;
+  height:70px;
+  background-color: transparent; 
+  border: 0;
+  z-index: $drawer-toggle-zIndex;
+  display: block;
+  span {
+   margin-top:10px;
+  }
+  span, 
+  span:before, 
+  span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 2px;
+    width: 30px;
+    background-color: $drawer-hamberger-bg-color;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all $drawer-duration $drawer-ease;
+  }
+  span:before {
+    top: -10px; 
+  }
+  span:after {
+    bottom: -10px;
+  }
+  span {
+    .drawer-open & {
+      background-color: transparent;
+    }
+  }
+  span:before, 
+  span:after {
+    .drawer-open & {
+      top: 0;
+    }
+  }
+  span:before {
+    .drawer-open & {
+      transform: rotate(45deg);
+    }
+  }
+  span:after {
+    .drawer-open & {
+      transform: rotate(-45deg);
+    }
+  }
+  &:hover{
+    cursor: pointer;
+  } 
+  @media screen and (min-width: 767px) {
+    display: none;
+    visibility: hidden;
+  }
+}
