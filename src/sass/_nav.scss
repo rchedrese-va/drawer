@@ -6,6 +6,7 @@
 }
 .drawer-brand {
   background-color: #637CA1;
+  padding: 10px;
   text-align: center;
   .profile-image {
     width: 90%;
@@ -35,6 +36,10 @@
   }
   li {
     overflow: hidden;
+    &:hover,
+    &:focus {
+      background-color: #3F4853;
+    }
   }
   .drawer-submenu-toggle {
     display: block;
@@ -105,10 +110,14 @@
     display: block;
     background-color: #3F4853;
     padding: 0 0 0 40px;
-  }
-  li a.selected {
-    background-color: #4D5760;
-    font-weight: normal;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.selected {
+      background-color: #4D5760;
+      font-weight: normal;
+    }
   }
 
   @media screen and (min-width: 767px) and (max-width: 1199px) {

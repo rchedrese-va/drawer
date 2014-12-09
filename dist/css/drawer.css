@@ -69,7 +69,6 @@
     right: 0; }
 
 .drawer-hamberger {
-  position: fixed;
   padding: 20px;
   width: 70px;
   height: 70px;
@@ -118,6 +117,7 @@
 
 .drawer-brand {
   background-color: #637CA1;
+  padding: 10px;
   text-align: center; }
   .drawer-brand .profile-image {
     width: 90%;
@@ -141,6 +141,8 @@
     background-color: #3F4853; }
   .drawer-nav-list li {
     overflow: hidden; }
+    .drawer-nav-list li:hover, .drawer-nav-list li:focus {
+      background-color: #3F4853; }
   .drawer-nav-list .drawer-submenu-toggle {
     display: block;
     float: right;
@@ -196,9 +198,9 @@
     display: block;
     background-color: #3F4853;
     padding: 0 0 0 40px; }
-  .drawer-subnav-list li a.selected {
-    background-color: #4D5760;
-    font-weight: normal; }
+    .drawer-subnav-list li a:hover, .drawer-subnav-list li a:focus, .drawer-subnav-list li a:active, .drawer-subnav-list li a.selected {
+      background-color: #4D5760;
+      font-weight: normal; }
   @media screen and (min-width: 767px) and (max-width: 1199px) {
     .drawer-subnav-list {
       position: absolute;
