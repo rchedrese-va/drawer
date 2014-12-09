@@ -7,7 +7,7 @@
  */
 
 $drawer-width-phone:       220px;
-$drawer-width-tablet:      $drawer-width-phone;
+$drawer-width-tablet:      80px;
 $drawer-width-desktop:     $drawer-width-phone;
 $drawer-ease:              cubic-bezier(0.190, 1.000, 0.220, 1.000);
 $drawer-duration:          .4s;
@@ -35,15 +35,6 @@ $drawer-hamberger-bg-color:#ddd;
 .drawer-left.drawer-open .drawer-main {
   left: 0;
 }
-.drawer-right .drawer-main {
-  right: -$drawer-width-phone;
-  -webkit-transition: right $drawer-duration $drawer-ease;
-       -o-transition: right $drawer-duration $drawer-ease;
-          transition: right $drawer-duration $drawer-ease;
-}
-.drawer-right.drawer-open .drawer-main {
-  right: 0;
-}
 .drawer-overlay {
   position: relative;
 }
@@ -58,17 +49,6 @@ $drawer-hamberger-bg-color:#ddd;
 .drawer-left.drawer-open .drawer-hamberger {
   left: $drawer-width-phone;
 }
-.drawer-right .drawer-overlay,
-.drawer-right .drawer-hamberger {
-  right: 0;
-  -webkit-transition: right $drawer-duration $drawer-ease;
-       -o-transition: right $drawer-duration $drawer-ease;
-          transition: right $drawer-duration $drawer-ease;
-}
-.drawer-right.drawer-open .drawer-overlay,
-.drawer-right.drawer-open .drawer-hamberger {
-  right: $drawer-width-phone;
-}
 .drawer-overlay-upper {
   position: fixed;
   top: 0;
@@ -80,9 +60,6 @@ $drawer-hamberger-bg-color:#ddd;
 }
 .drawer-left.drawer-open .drawer-overlay-upper {
   right: 0;
-}
-.drawer-right.drawer-open .drawer-overlay-upper {
-  left: 0;
 }
 .drawer-default {
   background-color: $drawer-nav-bg-color;
@@ -99,7 +76,15 @@ $drawer-hamberger-bg-color:#ddd;
 .drawer-brand {
   background-color: #637CA1;
   text-align: center;
+  .profile-image {
+    width: 90%;
+    border-radius: 50%;
+  }
+  .nap-card {
+
+  }
 }
+
 .drawer-default .drawer-nav-title {
   display: block;
   padding: 15px 15px 0 15px;
@@ -107,10 +92,13 @@ $drawer-hamberger-bg-color:#ddd;
 }
 .drawer-nav {
   background-color: $drawer-nav-bg-color;
+  position: relative;
+  z-index: 10;
 }
 .drawer-nav-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 
   .selected {
     background-color: #3F4853;
@@ -134,6 +122,8 @@ $drawer-hamberger-bg-color:#ddd;
   background-color: #3F4853;
   list-style: none;
   padding: 0;
+  text-align: left;
+  transition: none;
   li a {
     display: block;
     padding: 0 0 0 40px;
@@ -206,24 +196,49 @@ $drawer-hamberger-bg-color:#ddd;
   cursor: pointer;
 }
 @media (min-width: 767px) {
-  .drawer-responsive.drawer-left .drawer-toggle,
-  .drawer-responsive.drawer-right .drawer-toggle {
+  .drawer-responsive.drawer-left .drawer-toggle {
     display: none;
     visibility: hidden;
   }
   .drawer-responsive.drawer-left .drawer-main {
     left: 0;
   }
-  .drawer-responsive.drawer-right .drawer-main {
-    right: 0;
-  }
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
+  .drawer-nav-list {
+    padding: 0;
+    text-align: center;
+    span {
+      display: none;
+    }
+    li {
+      position: relative;
+    }
+    li:hover,
+    li:focus {
+      .drawer-subnav-list {
+        opacity: 1;
+        left: 80px;
+      }
+    }
+  }
+  .drawer-subnav-list {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 200px;
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    z-index: 1;
+    a {
+      padding: 0 20px !important;
+    }
+  }
   .drawer-responsive {
     background-color: $drawer-nav-bg-color;
   }
-  .drawer-responsive.drawer-left .drawer-main,
-  .drawer-responsive.drawer-right .drawer-main {
+  .drawer-responsive.drawer-left .drawer-main {
     position: absolute;
     width: $drawer-width-tablet !important;
     height: auto !important;
@@ -235,23 +250,31 @@ $drawer-hamberger-bg-color:#ddd;
   .drawer-responsive.drawer-left .drawer-overlay {
     margin-left: $drawer-width-tablet;
   }
-  .drawer-responsive.drawer-right .drawer-main {
-    float: right;
-  }
-  .drawer-responsive.drawer-right .drawer-overlay {
-    margin-right: $drawer-width-tablet;
-  }
 }
 @media (min-width: 1200px) {
-  .drawer-responsive.drawer-left .drawer-main,
-  .drawer-responsive.drawer-right .drawer-main {
+  .drawer-responsive.drawer-left .drawer-main {
     width: $drawer-width-desktop !important;
   }
   .drawer-responsive.drawer-left .drawer-overlay {
     margin-left: $drawer-width-desktop;
   }
-  .drawer-responsive.drawer-right .drawer-overlay {
-    margin-right: $drawer-width-desktop;
+  .drawer-nav-list {
+    text-align: left;
+    span {
+      display: inline;
+    }
+  }
+
+  .drawer-subnav-list {
+    width: 100%;
+    position: static;
+    display: block;
+    opacity: 1;
+    text-align: left;
+    transition: none;
+    a {
+      padding: 0;
+    }
   }
 }
 /*# sourceMappingURL=drawer.css.map */
