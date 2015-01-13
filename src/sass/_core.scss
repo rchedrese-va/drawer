@@ -19,6 +19,7 @@
   overflow: hidden;
   left: -$drawer-width-phone;
   transition: left $drawer-duration $drawer-ease;
+  z-index: $drawer-upper-zIndex;
 
   .drawer-open & {
     left: 0;
@@ -49,9 +50,9 @@
   position: relative;
   left: 0;
   transition: left $drawer-duration $drawer-ease;
-  .drawer-open & {
-    left: $drawer-width-phone;
-  }
+  // .drawer-open & {
+  //   left: $drawer-width-phone;
+  // }
   @media screen and (min-width: 768px) {
     margin-left: $drawer-width-tablet;
   }

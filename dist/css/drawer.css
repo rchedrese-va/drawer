@@ -21,7 +21,8 @@
   height: 100%;
   overflow: hidden;
   left: -220px;
-  transition: left 0.4s cubic-bezier(0.19, 1, 0.22, 1); }
+  transition: left 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 1100; }
   .drawer-open .drawer-main {
     left: 0; }
   @media screen and (min-with: 767px) {
@@ -47,8 +48,6 @@
   position: relative;
   left: 0;
   transition: left 0.4s cubic-bezier(0.19, 1, 0.22, 1); }
-  .drawer-open .drawer-overlay {
-    left: 220px; }
   @media screen and (min-width: 768px) {
     .drawer-overlay {
       margin-left: 80px; } }
@@ -94,14 +93,14 @@
     top: -10px; }
   .drawer-hamberger span:after {
     bottom: -10px; }
-  .drawer-open .drawer-hamberger span {
+  .drawer-hamberger.hamberger-open span {
     background-color: transparent; }
-  .drawer-open .drawer-hamberger span:before, .drawer-open
-  .drawer-hamberger span:after {
+  .drawer-hamberger.hamberger-open span:before,
+  .drawer-hamberger.hamberger-open span:after {
     top: 0; }
-  .drawer-open .drawer-hamberger span:before {
+  .drawer-hamberger.hamberger-open span:before {
     transform: rotate(45deg); }
-  .drawer-open .drawer-hamberger span:after {
+  .drawer-hamberger.hamberger-open span:after {
     transform: rotate(-45deg); }
   .drawer-hamberger:hover {
     cursor: pointer; }

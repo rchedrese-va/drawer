@@ -28,27 +28,22 @@
   span:after {
     bottom: -10px;
   }
-  span {
-    .drawer-open & {
+  &.hamberger-open {
+    span {
       background-color: transparent;
     }
-  }
-  span:before, 
-  span:after {
-    .drawer-open & {
+    span:before, 
+    span:after {
       top: 0;
     }
-  }
-  span:before {
-    .drawer-open & {
+    span:before {
       transform: rotate(45deg);
     }
-  }
-  span:after {
-    .drawer-open & {
+    span:after {
       transform: rotate(-45deg);
     }
   }
+  
   &:hover{
     cursor: pointer;
   } 

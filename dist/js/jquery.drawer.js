@@ -75,6 +75,7 @@
           event.preventDefault();
         });
       }
+      $('.drawer-hamberger').addClass('hamberger-open');
       $this.removeClass(options.closeClass).addClass(options.openClass).transitionEnd(function() {
         $("." + options.upperClass).css({
           width: upperWidth,
@@ -94,6 +95,7 @@
       $("." + options.upperClass).css({
         display: "none"
       });
+      $('.drawer-hamberger').removeClass('hamberger-open');
       $this.removeClass(options.openClass).addClass(options.closeClass).transitionEnd(function() {
         $this.css({
           overflow: "auto"
