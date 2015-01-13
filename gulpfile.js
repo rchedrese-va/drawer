@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var sass = require('gulp-ruby-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var reload = browserSync.reload;
 
 gulp.task('default', function() {
@@ -17,7 +18,7 @@ gulp.task('watch', function() {
     }
   });
 
-  gulp.watch(['src/sass/*.scss'], ['styles', reload]);
+  gulp.watch(['src/sass/'], ['styles', reload]);
   gulp.watch(['./*.html'], reload);
   gulp.watch(['src/js/*.js'], ['styles', reload]);
 });
@@ -28,8 +29,8 @@ gulp.task('copy', ['styles', 'js'], function() {
 
 // Compile Sass files
 gulp.task('styles', function() {
-  return gulp.src('src/sass/*.scss')
-    .pipe(sass())
+  return sass('src/sass/drawer.scss', { sourcemap: true })
+    .pipe(autoprefixer())
     .pipe(gulp.dest('dist/css')) // Write the CSS & Source maps
     .pipe(gulp.dest('docs/css'))
     .pipe(browserSync.reload({stream:true}))

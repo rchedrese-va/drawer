@@ -18,11 +18,12 @@
   height: 100%;
   overflow: hidden;
   left: -$drawer-width-phone;
-  transition: left $drawer-duration $drawer-ease;
+  transition: all $drawer-duration $drawer-ease;
   z-index: $drawer-upper-zIndex;
 
   .drawer-open & {
-    left: 0;
+    /* left: 0; */
+    transform: translateX($drawer-width-phone);
   }
 
   @media screen and (min-with: 767px) {
@@ -50,9 +51,9 @@
   position: relative;
   left: 0;
   transition: left $drawer-duration $drawer-ease;
-  // .drawer-open & {
-  //   left: $drawer-width-phone;
-  // }
+  /* .drawer-open & {
+     left: $drawer-width-phone;
+  }*/
   @media screen and (min-width: 768px) {
     margin-left: $drawer-width-tablet;
   }
